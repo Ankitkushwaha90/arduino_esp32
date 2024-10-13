@@ -1,6 +1,8 @@
 
 install in esp32 driver (https://www.youtube.com/watch?v=0qaNn3yNAIQ)
-start_Firstproject(https://www.youtube.com/watch?v=AitCKcyjHuQ&t=163s)
+
+
+## guide
 Here’s a general guide for writing notes and understanding code for ESP32 Arduino programs, including explanations for common components like pin configuration, WiFi, sensors, and actuators. I’ll give examples for each part.
 
 ### 1. Setup & Initialization of the ESP32
