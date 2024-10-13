@@ -1,0 +1,68 @@
+
+
+
+# blue light blinking 
+
+```gcc
+//  Blink
+ 
+ #include <SPI.h>
+#include <WiFi.h>
+#include <math.h>
+#include "time.h"
+
+#define SENSOR_PIN 14  
+#define ONBOARD_LED 2
+
+
+
+char wifissid[18] = "Homestead-LAN_EXT";  //     
+char wifipass[13] = "xxxxxxxxxx";           //
+
+WiFiClient client;
+
+WiFiServer server(80);  
+
+int Initial_Connect_Attempts = 0;
+int Try_Count = 0;
+
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(ONBOARD_LED, OUTPUT);  //  Blink LED function
+/*
+  while (WiFi.status() != WL_CONNECTED) {
+    Initial_Connect_Attempts++;
+    Serial.println("Attempting to Connect To Local Network:   ");
+    Serial.println(wifissid);
+    WiFi.begin(wifissid, wifipass);
+    delay(4000);
+
+    if (Initial_Connect_Attempts == 5) {
+      Serial.println("5 LAN connect attempts unsuccessful; going to connectToWifi()");
+
+      //  connectToWiFi();
+    }
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.print("Connected to WiFi network with IP Address: ");
+  Serial.println(WiFi.localIP());
+  Serial.println("Attempting to connect to local WPA network...");
+
+  server.begin();
+  // you're connected now, so print out the status:
+  Serial.print("WiFi Status:  ");
+  Serial.println(WiFi.status());
+  Serial.println();
+  Serial.print("ESP Board MAC Address:  ");
+  Serial.println(WiFi.macAddress());
+ */ 
+}
+void loop() {
+  digitalWrite(ONBOARD_LED, HIGH);  
+  delay(1000);                      
+  digitalWrite(ONBOARD_LED, LOW);   
+  delay(1000);                      
+}
+```
