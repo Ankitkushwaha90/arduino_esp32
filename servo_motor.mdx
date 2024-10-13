@@ -1,0 +1,17 @@
+## esp32 wroom servo motor
+
+```cpp
+#include <ESP32Servo.h>
+
+Servo myServo;
+int servoPin = 18;
+
+void setup(){
+
+  myServo.attach(servoPin);
+  myServo.write(90);
+}
+
+void loop(){
+}
+```
