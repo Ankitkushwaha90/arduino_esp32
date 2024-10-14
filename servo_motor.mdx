@@ -37,3 +37,36 @@ void loop(){
   delay(20);
 }
 ```
+## 90 degree left right move
+```cpp
+#include <ESP32Servo.h>
+
+Servo myServo;
+int servoPin = 18;
+int angle = 0;  // Starting angle
+int step = 1;   // Angle increment for smooth motion
+
+void setup() {
+  myServo.attach(servoPin);
+  myServo.write(90);  // Start at 90 degrees (center position)
+  delay(500);        // Pause for a second
+}
+
+void loop() {
+  // Rotate from 0 to 90 degrees
+  for (angle = 0; angle <= 90; angle += step) {
+    myServo.write(angle);
+    delay(20);  // Adjust for smoother or faster motion
+  }
+
+  delay(1000);  // Pause at 90 degrees
+
+  // Rotate back from 90 to 0 degrees
+  for (angle = 90; angle >= 0; angle -= step) {
+    myServo.write(angle);
+    delay(20);  // Adjust for smoother or faster motion
+  }
+
+  delay(500);  // Pause at 0 degrees
+}
+```
